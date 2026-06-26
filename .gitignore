@@ -1,0 +1,123 @@
+# ══════════════════════════════════════════════
+# PYTHON
+# ══════════════════════════════════════════════
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# ══════════════════════════════════════════════
+# VIRTUAL ENVIRONMENT
+# ══════════════════════════════════════════════
+venv/
+env/
+ENV/
+.venv/
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ══════════════════════════════════════════════
+# SECRETS — NEVER COMMIT
+# ══════════════════════════════════════════════
+.env
+*.env
+secrets.json
+config_secret.py
+
+# ══════════════════════════════════════════════
+# RAW DATA — TOO LARGE FOR HUGGINGFACE
+# These are source files used only during ingestion.
+# The processed database (faiss_db) is what matters.
+# ══════════════════════════════════════════════
+data/raw_pdfs/
+data/all_documents/
+data/processed_text/
+data/chroma_db/
+data/knowledge_base/
+
+# ══════════════════════════════════════════════
+# LARGE FILES TRACKED BY GIT LFS INSTEAD
+# These are NOT ignored — they go via LFS
+# data/faiss_db/   ← tracked by LFS
+# data/bm25_index.pkl ← tracked by LFS
+# ══════════════════════════════════════════════
+
+# ══════════════════════════════════════════════
+# GENERATED OUTPUT FILES
+# ══════════════════════════════════════════════
+eval_results.json
+response_cache.json
+data/response_cache.json
+*.log
+logs/
+
+# ══════════════════════════════════════════════
+# OS FILES
+# ══════════════════════════════════════════════
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ══════════════════════════════════════════════
+# IDE / EDITOR
+# ══════════════════════════════════════════════
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ══════════════════════════════════════════════
+# JUPYTER NOTEBOOKS (if any)
+# ══════════════════════════════════════════════
+.ipynb_checkpoints/
+*.ipynb
+
+# ══════════════════════════════════════════════
+# TESTING / DEBUGGING SCRIPTS
+# Not needed on HuggingFace but harmless to include.
+# Uncomment lines below to exclude them:
+# ══════════════════════════════════════════════
+# audit_pdfs.py
+# diagnose.py
+# model_test.py
+# test_retrieval.py
+# built_bm24.py
+# build_bm25.py
+# evaluate.py
+# eval_results.json
+
+# ══════════════════════════════════════════════
+# MISC
+# ══════════════════════════════════════════════
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+.pytest_cache/
+.coverage
+htmlcov/

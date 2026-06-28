@@ -56,47 +56,45 @@ The chatbot is powered by a curated knowledge base of **30,000+ vector embedding
 
 ## 🏗️ System Architecture
 
-
 ┌─────────────────────────────────────────────────────────────────┐
-│ User Interface │
-│ (Streamlit Web App) │
+│                         User Interface                         │
+│                      (Streamlit Web App)                       │
 └─────────────────────────────────────────────────────────────────┘
-│
-▼
+                                  │
+                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ Query Processing │
-│ • Language Detection (Bengali/English) │
-│ • Query Rewriting (with chat history) │
-│ • Hybrid Retrieval (Vector + BM25) │
+│                        Query Processing                        │
+│  • Language Detection (Bengali / English)                      │
+│  • Query Rewriting (with chat history)                         │
+│  • Hybrid Retrieval (Vector + BM25)                           │
 └─────────────────────────────────────────────────────────────────┘
-│
-▼
+                                  │
+                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ Knowledge Base │
-│ ┌─────────────────┐ ┌─────────────────┐ │
-│ │ ChromaDB │ │ BM25 Index │ │
-│ │ (Vector Store) │ │ (Keyword Store) │ │
-│ └─────────────────┘ └─────────────────┘ │
+│                         Knowledge Base                         │
+│  ┌─────────────────────┐     ┌─────────────────────┐          │
+│  │      ChromaDB       │     │      BM25 Index     │          │
+│  │   (Vector Store)    │     │   (Keyword Store)   │          │
+│  └─────────────────────┘     └─────────────────────┘          │
 └─────────────────────────────────────────────────────────────────┘
-│
-▼
+                                  │
+                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ LLM Generation │
-│ ┌─────────────────────────────────────────────────────────┐ │
-│ │ Primary: Hugging Face Inference API (Qwen2.5-7B) │ │
-│ │ Fallback: Groq API (Qwen3-32B / Llama3-70B) │ │
-│ └─────────────────────────────────────────────────────────┘ │
+│                        LLM Generation                          │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │  Primary: Hugging Face Inference API (Qwen2.5-7B)      │   │
+│  │  Fallback: Groq API (Qwen3-32B / Llama3-70B)           │   │
+│  └─────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────┘
-│
-▼
+                                  │
+                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ Response Output │
-│ • Natural language answers │
-│ • Source citations (document + page) │
-│ • Bilingual (English/Bengali) │
-│ • Bullet points for readability │
+│                        Response Output                         │
+│  • Natural language answers                                    │
+│  • Source citations (document + page)                          │
+│  • Bilingual (English / Bengali)                               │
+│  • Bullet points for readability                               │
 └─────────────────────────────────────────────────────────────────┘
-
 
 
 ---
